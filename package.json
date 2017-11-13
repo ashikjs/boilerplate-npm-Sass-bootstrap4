@@ -1,0 +1,25 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "I am going to learn SASS Program",
+  "main": "index.js",
+  "scripts": {
+    "test": "run test",
+    "build-css": "node-sass --include-path sass sass/main.sass public/css/main.css && node-sass --include-path sass sass/bootstrap/bootstrap.scss public/css/bootstrap.css",
+    "watch-css": "nodemon -e scss -x 'npm run build-css'"
+  },
+  "keywords": [
+    "SASS",
+    "node",
+    "css"
+  ],
+  "author": "ashikjs",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.6.1",
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2"
+  }
+}
