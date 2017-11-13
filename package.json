@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "node-sass --output-style compressed -o sass sass/main.sass public/css/main.css",
-    "sass": "node-sass --include-path sass sass/main.sass public/css/main.css && node-sass --include-path sass sass/bootstrap/bootstrap.scss  public/css/bootstrap.css",
-    "sassMinifi": "node-sass --include-path sass sass/main.sass public/css/main.min.css --output-style compressed && node-sass --include-path sass sass/bootstrap/bootstrap.scss  public/css/bootstrap.min.css --output-style compressed ",
+    "sass": "node-sass --include-path sass src/sass/main.sass public/css/main.css && node-sass --include-path sass src/sass/bootstrap/bootstrap.scss  public/css/bootstrap.css",
+    "sassMinifi": "node-sass --include-path sass src/sass/main.sass public/css/main.min.css --output-style compressed && node-sass --include-path sass src/sass/bootstrap/bootstrap.scss  public/css/bootstrap.min.css --output-style compressed ",
     "prefix": "postcss -u autoprefixer -r public/css/main.min.css",
     "devcss": "nodemon -e sass -x npm run sass",
-    "buildcss": "npm run sassMinifi | npm run prefix"
+    "buildcss": "npm run sassMinifi | npm run prefix",
+    "uglify": "uglifyjs src/js/*.js -m -c -o public/js/main.js | uglifyjs src/bootstrap/*.js -m -c -o public/js/bootstrap.min.js"
   },
   "keywords": [
     "SASS",
@@ -24,6 +25,7 @@
   },
   "dependencies": {
     "autoprefixer": "^7.1.6",
-    "postcss-cli": "^4.1.1"
+    "postcss-cli": "^4.1.1",
+    "uglify-js": "^3.1.9"
   }
 }
