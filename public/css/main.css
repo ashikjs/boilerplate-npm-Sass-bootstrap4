@@ -1,0 +1,25 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0; }
+
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
+
+body {
+  font: 80% Helvetica, sans-serif;
+  background-color: #efefef; }
+
+a:hover {
+  color: #ff0000; }
+
+.example {
+  display: flex;
+  transition: all .5s;
+  user-select: none;
+  background: linear-gradient(to bottom, white, black); }
