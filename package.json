@@ -4,9 +4,10 @@
   "description": "I am going to learn SASS Program",
   "main": "index.js",
   "scripts": {
-    "test": "run test",
-    "build-css": "node-sass --include-path sass sass/main.sass public/css/main.css && node-sass --include-path sass sass/bootstrap/bootstrap.scss public/css/bootstrap.css",
-    "watch-css": "nodemon -e scss -x 'npm run build-css'"
+    "test": "node-sass --output-style compressed -o sass sass/main.sass public/css/main.css",
+    "build-css": "node-sass --include-path sass sass/main.sass public/css/main.css && node-sass --include-path sass sass/bootstrap/bootstrap.scss  public/css/bootstrap.css",
+    "watch-css": "nodemon -e scss -x 'npm run build-css'",
+    "autoprefixer": "postcss -u autoprefixer -r public/css/main.css"
   },
   "keywords": [
     "SASS",
@@ -20,6 +21,8 @@
     "nodemon": "^1.12.1"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-beta.2"
+    "autoprefixer": "^7.1.6",
+    "bootstrap": "^4.0.0-beta.2",
+    "postcss-cli": "^4.1.1"
   }
 }
