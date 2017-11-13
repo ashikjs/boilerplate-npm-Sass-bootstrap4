@@ -1,13 +1,15 @@
 {
   "name": "sass",
   "version": "1.0.0",
-  "description": "I am going to learn SASS Program",
+  "description": "I am going to learn SASS",
   "main": "index.js",
   "scripts": {
     "test": "node-sass --output-style compressed -o sass sass/main.sass public/css/main.css",
-    "build-css": "node-sass --include-path sass sass/main.sass public/css/main.css && node-sass --include-path sass sass/bootstrap/bootstrap.scss  public/css/bootstrap.css",
-    "watch-css": "nodemon -e scss -x 'npm run build-css'",
-    "autoprefixer": "postcss -u autoprefixer -r public/css/main.css"
+    "sass": "node-sass --include-path sass sass/main.sass public/css/main.css && node-sass --include-path sass sass/bootstrap/bootstrap.scss  public/css/bootstrap.css",
+    "sassMinifi": "node-sass --include-path sass sass/main.sass public/css/main.min.css --output-style compressed && node-sass --include-path sass sass/bootstrap/bootstrap.scss  public/css/bootstrap.min.css --output-style compressed ",
+    "prefix": "postcss -u autoprefixer -r public/css/main.min.css",
+    "devcss": "nodemon -e sass -x npm run sass",
+    "buildcss": "npm run sassMinifi | npm run prefix"
   },
   "keywords": [
     "SASS",
